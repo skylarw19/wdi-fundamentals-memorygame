@@ -9,20 +9,18 @@ console.log("User flipped " + cardThree);
  let cards = ["queen", "queen", "king", "king"];
  let cardsInPlay = [];
 
- let cardOne = cards[0];
- cardsInPlay.push(cardOne);
-
- //create var to rep 2nd card flipped. 3rd item in cards array. add to cardsinplay 
- let cardTwo = cards[2];
- cardsInPlay.push(cardTwo);
-
- if(cardsInPlay.length===2){
+ function checkForMatch(){
  	if(cardsInPlay[0]===cardsInPlay[1]){
- 		alert("You found a match!");
- 	}
- 	else { alert("Sorry, try again."); }
+ 		console.log("You found a match!");
+	}
+ 	else { console.log("Sorry, try again."); }
  }
 
- console.log(cards);
- console.log(cardsInPlay);
+ function flipCard(cardID){
+ 	console.log("User flipped " + cards[cardID]);
+ 	cardsInPlay.push(cardID);	
+ 	checkForMatch();
+ }
 
+ flipCard(0);
+ flipCard(2);
